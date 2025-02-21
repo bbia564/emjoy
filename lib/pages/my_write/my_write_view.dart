@@ -11,8 +11,8 @@ class MyWriteView extends GetView<PageLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.boyle.value
-              ? const CircularProgressIndicator(color: Colors.black)
+          () => controller.hermann.value
+              ? const CircularProgressIndicator(color: Colors.greenAccent)
               : buildError(),
         ),
       ),
@@ -26,7 +26,7 @@ class MyWriteView extends GetView<PageLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.tgskbdqz();
+              controller.ndvtkqgl();
             },
             icon: const Icon(
               Icons.restart_alt,

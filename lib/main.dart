@@ -9,10 +9,11 @@ import 'package:my_diary/pages/my_second/my_second_binding.dart';
 import 'package:my_diary/pages/my_second/my_second_view.dart';
 import 'package:my_diary/pages/my_tab/my_tab_binding.dart';
 import 'package:my_diary/pages/my_tab/my_tab_view.dart';
+import 'package:my_diary/pages/my_write/my_write_binding.dart';
+import 'package:my_diary/pages/my_write/my_write_view.dart';
 import 'package:my_diary/pages/no_network/no_network_binding.dart';
+import 'package:my_diary/pages/no_network/no_network_check.dart';
 import 'package:my_diary/pages/no_network/no_network_view.dart';
-import 'package:my_diary/router/my_names.dart';
-import 'package:my_diary/router/my_pages.dart';
 
 Color primaryColor = const Color(0xff2dcc71);
 Color bgColor = const Color(0xfff2f1f6);
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: Emjoy,
-      initialRoute: '/my_tab',
+      initialRoute: '/',
       theme: ThemeData(
         useMaterial3: true,
         primaryColor: primaryColor,
@@ -83,9 +84,11 @@ class MyApp extends StatelessWidget {
   }
 }
 List<GetPage<dynamic>> Emjoy = [
+  GetPage(name: '/', page: () => const MyWriteView(), binding: MyWriteBinding()),
   GetPage(name: '/my_tab', page: () => MyTabPage(), binding: MyTabBinding()),
   GetPage(name: '/my_first', page: () => MyFirstPage(), binding: MyFirstBinding()),
   GetPage(name: '/my_second', page: () => const MySecondPage(), binding: MySecondBinding()),
   GetPage(name: '/my_add', page: () => MyAddPage(), binding: MyAddBinding()),
+  GetPage(name: '/my_write', page: () => const NoNetworkCheck()),
   GetPage(name: '/no_network', page: () => NoNetworkPage(), binding: NoNetworkBinding())
 ];

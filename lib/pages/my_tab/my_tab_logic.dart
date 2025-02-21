@@ -1,7 +1,6 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:my_diary/router/my_names.dart';
 
 class MyTabLogic extends GetxController {
 
@@ -11,7 +10,7 @@ class MyTabLogic extends GetxController {
   void checkNetwork() async {
     var connectivityResult = await (Connectivity().checkConnectivity());
     if (connectivityResult.contains(ConnectivityResult.none)) {
-      Get.toNamed(MyNames.noNetwork);
+      Get.toNamed('/no_network');
     }
   }
 

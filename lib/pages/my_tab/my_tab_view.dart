@@ -4,7 +4,6 @@ import 'package:my_diary/pages/my_add/my_add_view.dart';
 import 'package:my_diary/pages/my_first/my_first_logic.dart';
 import 'package:my_diary/pages/my_first/my_first_view.dart';
 import 'package:my_diary/pages/my_second/my_second_view.dart';
-import 'package:my_diary/router/my_names.dart';
 
 import '../../main.dart';
 import 'my_tab_logic.dart';
@@ -47,7 +46,7 @@ class MyTabPage extends GetView<MyTabLogic> {
       currentIndex: controller.currentIndex.value,
       onTap: (index) {
         if (index == 1) {
-          Get.toNamed(MyNames.myAdd)?.then((_) {
+          Get.toNamed('/my_add')?.then((_) {
             MyFirstLogic firstLogic = Get.find();
             firstLogic.getData();
           });
